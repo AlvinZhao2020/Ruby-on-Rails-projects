@@ -14,5 +14,13 @@ class Dog < ApplicationRecord
             errors[:name] << 'is too short'
         end
     end
+
+
+#    rails associtation
+    has_many(:toys,{
+        primary_key: :id,
+        foreign_key: :dog_id,
+        class_name: :Toy
+    })
     
 end
